@@ -10,7 +10,7 @@ public class Circulo extends FiguraGeometrica{
 	
 	private Punto centro;
 	private double radio;
-	private Punto inicio;
+	private Punto extremo;
 
 	/**
 	 * Constructor de la clase Circulo
@@ -56,11 +56,11 @@ public class Circulo extends FiguraGeometrica{
 	@Override
 	public void rotar(double angulo) {
 		double X1 = centro.getX() + radio;
-		inicio = new Punto(X1, centro.getY());
+		extremo = new Punto(X1, centro.getY());
 		double X2 = centro.getX() + (X1 - centro.getX()) * Math.cos(angulo) - (centro.getY() - centro.getY()) * Math.sin(angulo);
 		double Y2 = centro.getY() + (X1 - centro.getX()) * Math.sin(angulo) + (centro.getY() - centro.getY()) * Math.cos(angulo);
-		inicio.setX(X2);
-		inicio.setY(Y2);
+		extremo.setX(X2);
+		extremo.setY(Y2);
 	}
 	
 	/**
