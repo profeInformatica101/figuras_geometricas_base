@@ -1,4 +1,4 @@
-package punto;
+package com.endes.figuras;
 
 public class Punto  {
 	double y;
