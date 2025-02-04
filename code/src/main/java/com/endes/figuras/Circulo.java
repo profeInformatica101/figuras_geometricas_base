@@ -26,6 +26,34 @@ public class Circulo extends FiguraGeometrica{
 		this.centro = centro;
 		this.radio = radio;		
 	}
+	
+	/**
+	 * Metodo para obtener el centro del circulo
+	 * 
+	 * @return centro Coordenadas X e Y del centro del circulo
+	 */
+	public Punto getCentro() {
+		return centro;
+	}
+
+	/**
+	 * Metodo para obtener el radio del circulo
+	 * 
+	 * @return radio Radio del circulo
+	 */
+	public double getRadio() {
+		return radio;
+	}
+
+	/**
+	 * Metodo para obtener el punto extremo del circulo
+	 * 
+	 * @return extremo Punto en el extremo del circulo
+	 */
+	public Punto getExtremo() {
+		return extremo;
+	}
+
 
 	/**
 	 * Metodo para obtener el area del circulo
@@ -56,11 +84,11 @@ public class Circulo extends FiguraGeometrica{
 	@Override
 	public void rotar(double angulo) {
 		double X1 = centro.getX() + radio;
-		extremo = new Punto(X1, centro.getY());
-		double X2 = centro.getX() + (X1 - centro.getX()) * Math.cos(angulo) - (centro.getY() - centro.getY()) * Math.sin(angulo);
-		double Y2 = centro.getY() + (X1 - centro.getX()) * Math.sin(angulo) + (centro.getY() - centro.getY()) * Math.cos(angulo);
-		extremo.setX(X2);
-		extremo.setY(Y2);
+	    extremo = new Punto(X1, centro.getY());
+	    double X2 = centro.getX() + (extremo.getX() - centro.getX()) * Math.cos(angulo) - (extremo.getY() - centro.getY()) * Math.sin(angulo);
+	    double Y2 = centro.getY() + (extremo.getX() - centro.getX()) * Math.sin(angulo) + (extremo.getY() - centro.getY()) * Math.cos(angulo);
+	    extremo.setX(X2);
+	    extremo.setY(Y2);
 	}
 	
 	/**
